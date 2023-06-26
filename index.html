@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="estilos.css">
+    <title>PURA skincare</title>
+</head>
+
+<body>
+    
+    <header>
+        <img src="img/Logo.svg" alt="Logo de Pura skincare" id="Logo">
+    <nav>
+        <ul>
+            <li> <a href="#" target="_blank"> Sobre Pura </a></li>
+            <li> <a href="#" target="_blank"> Contacto </a></li>
+            <li> <a href="#" target="_blank"> Tienda </a></li>
+        </ul>
+        <img src="img/carrito.png" alt="Carrito" class="carrito">
+    </nav>
+
+</header>
+
+<main>
+
+<div class="ventanaModal">
+    <div class="ventana">
+        <h2>Productos en el carrito</h2>
+        <div id="carrito-items"></div>
+        <p>Total a pagar:   <span id="total"></span></p>
+        <button class="vaciar"> Vaciar carrito </button>
+        <button class="cerrar"> X </button>
+</div>
+</div>
+
+    <h1> Tienda online </h1>
+    <div id="filtro-categorias">
+        <label for="categoria">Filtrar por categoría:</label>
+        <select id="categoria" onchange="filtrarProductosPorCategoria()">
+        <option value="">Todos</option>
+            <option value="Categoría 1">Faciales</option>
+            <option value="Categoría 2">Corporales</option>
+            <option value="Categoría 3">Accesorios</option>
+        <!-- Opciones de categorías se generan dinámicamente -->
+        </select>
+    </div>
+      
+    <div id="catalogo">    
+    </div>
+
+</main>
+    <script src="script.js"></script>
+</body>
+</html>
+
