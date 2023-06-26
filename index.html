@@ -8,33 +8,30 @@
 </head>
 
 <body>
-    
     <header>
         <img src="img/Logo.svg" alt="Logo de Pura skincare" id="Logo">
-    <nav>
-        <ul>
-            <li> <a href="#" target="_blank"> Sobre Pura </a></li>
-            <li> <a href="#" target="_blank"> Contacto </a></li>
-            <li> <a href="#" target="_blank"> Tienda </a></li>
-        </ul>
-        <img src="img/carrito.png" alt="Carrito" class="carrito">
-    </nav>
-
-</header>
+        <nav>
+            <ul>
+                <li> <a href="#" target="_blank"> Sobre Pura </a></li>
+                <li> <a href="#" target="_blank"> Contacto </a></li>
+                <li> <a href="#" target="_blank"> Tienda </a></li>
+            </ul>
+            <img src="img/carrito.png" alt="Carrito" class="carrito">
+        </nav>
+    </header>
 
 <main>
+    <div class="ventanaModal">
+        <div class="ventana">
+            <h2>Productos en el carrito</h2>
+            <div id="carrito-items"></div>
+            <p>Total a pagar:   <span id="total"></span></p>
+            <button class="vaciarcarrito">Vaciar carrito</button>
+            <button class="cerrar">X</button>
+        </div>
+    </div>
 
-<div class="ventanaModal">
-    <div class="ventana">
-        <h2>Productos en el carrito</h2>
-        <div id="carrito-items"></div>
-        <p>Total a pagar:   <span id="total"></span></p>
-        <button class="vaciar"> Vaciar carrito </button>
-        <button class="cerrar"> X </button>
-</div>
-</div>
-
-    <h1> Tienda online </h1>
+    <h1>Tienda online</h1>
     <div id="filtro-categorias">
         <label for="categoria">Filtrar por categoría:</label>
         <select id="categoria" onchange="filtrarProductosPorCategoria()">
@@ -42,12 +39,10 @@
             <option value="Categoría 1">Faciales</option>
             <option value="Categoría 2">Corporales</option>
             <option value="Categoría 3">Accesorios</option>
-        <!-- Opciones de categorías se generan dinámicamente -->
         </select>
     </div>
-      
-    <div id="catalogo">    
-    </div>
+
+    <div id="catalogo"></div>
 
 </main>
     <script src="script.js"></script>

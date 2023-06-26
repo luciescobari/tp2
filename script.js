@@ -96,14 +96,13 @@ function cargarCatalogo() {
         <p>${producto.descripcion}</p>
         <p>Precio: $${producto.precio}</p>
         <button class="btn-agregar" onclick="agregarAlCarrito(${i})">Agregar al carrito</button>
-      </div>
-    `;
+      </div>`;
 
     catalogo.innerHTML += productoHTML;
   }
 }
 
-// Categorias: 
+//Categorias: 
 function filtrarProductosPorCategoria() {
   var filtroCategoria = document.getElementById("categoria").value;
   var catalogo = document.getElementById("catalogo");
@@ -120,9 +119,7 @@ function filtrarProductosPorCategoria() {
           <p>${producto.descripcion}</p>
           <p>Precio: $${producto.precio}</p>
           <button class="btn-agregar" onclick="agregarAlCarrito(${i})">Agregar al carrito</button>
-        </div>
-      `;
-
+        </div>`;
       catalogo.innerHTML += productoHTML;
     }
   }
@@ -138,23 +135,19 @@ function agregarAlCarrito(indice) {
 
 // Carrito: 
 
-var carrito = document.querySelector('.carrito');
+  var carrito = document.querySelector('.carrito');
+  var ventana = document.querySelector('.ventanaModal');
+  var fondo = document.querySelector('#carrito');
+  ventana.style.visibility = 'hidden';
 
-var ventana = document.querySelector('.ventanaModal');
+  var cerrar = document.querySelector('.cerrar');
+  cerrar.style.marginLeft = '80%';
 
-var fondo = document.querySelector('#carrito');
-ventana.style.visibility = 'hidden';
-
-var cerrar = document.querySelector('.cerrar');
-cerrar.style.marginLeft = '80%';
-
-carrito.addEventListener('click', (parametro) => {
-
+  carrito.addEventListener('click', (parametro) => {
   ventana.style.cssText = "margin-left: 70%; border: 1px solid #000; width: 400px; padding: 15px; visibility: show"; 
+});
 
-})
-
-function actualizarCarrito() {
+function actualizarCarrito(){
   var carritoItemsDiv = document.getElementById("carrito-items");
   var totalDiv = document.getElementById("total");
 
@@ -172,11 +165,10 @@ function actualizarCarrito() {
       </div>`;
 
     carritoItemsDiv.innerHTML += carritoItemHTML;
-
   }
 }
 
-function eliminarDelCarrito(indice) {
+function eliminarDelCarrito(indice){
   var productoEliminado = carritoItems.splice(indice, 1)[0];
   totalPagar -= productoEliminado.precio;
 
@@ -185,20 +177,17 @@ function eliminarDelCarrito(indice) {
 
 cargarCatalogo();
 
-// Vaciar carrito:
+
 var  vaciar = document.querySelector('.vaciarcarrito');
-
 vaciar.addEventListener ('click', () => {
+  carritoItems = [];
+  totalPagar = 0;
+  actualizarCarrito();
+});
 
-})
-
-// Cerrar carrito: 
 cerrar.addEventListener('click', () => {
   ventana.style.visibility = 'hidden';
-})
-
-
-
+});
 
 
 
