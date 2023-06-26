@@ -20,17 +20,6 @@
         </nav>
     </header>
 
-<main>
-    <div class="ventanaModal">
-        <div class="ventana">
-            <h2>Productos en el carrito</h2>
-            <div id="carrito-items"></div>
-            <p>Total a pagar:   <span id="total"></span></p>
-            <button class="vaciarcarrito">Vaciar carrito</button>
-            <button class="cerrar">X</button>
-        </div>
-    </div>
-
     <h1>Tienda online</h1>
     <div id="filtro-categorias">
         <label for="categoria">Filtrar por categoría:</label>
@@ -42,9 +31,20 @@
         </select>
     </div>
 
-    <div id="catalogo"></div>
+    <div class="ventanaModal">
+        <div class="ventana">
+            <h2>Productos en el carrito</h2>
+            <div id="carrito-items"></div>
+            <p>Total a pagar:   <span id="total"></span></p>
+            <button class="vaciarcarrito">Vaciar carrito</button>
+            <button class="cerrar">X</button>
+        </div>
+    </div>
 
-</main>
+    <main>
+        <div id="catalogo"></div>
+    </main>
+
     <script src="script.js"></script>
 </body>
 </html>

@@ -46,7 +46,7 @@ var productos = [
     nombre: "Emulsion corporal",
     descripcion: "Con aloe vera, ideal para el verano.",
     precio: 420,
-    imagen: "img/emulsióncorporalconaloeveraII.png",
+    imagen: "img/emulsióncorporalconaloeveraII.png",
     categoria: "Categoría 2"
   },
   {
@@ -134,7 +134,6 @@ function agregarAlCarrito(indice) {
 }
 
 // Carrito: 
-
   var carrito = document.querySelector('.carrito');
   var ventana = document.querySelector('.ventanaModal');
   var fondo = document.querySelector('#carrito');
@@ -158,11 +157,10 @@ function actualizarCarrito(){
     var carritoItem = carritoItems[i];
 
     var carritoItemHTML = `
-      <div>
+      <div class="carrito-items">
         <p>${carritoItem.nombre}</p>
         <p>$${carritoItem.precio}</p>
-        <button onclick="eliminarDelCarrito(${i})"> Eliminar </button>
-      </div>`;
+        <button onclick="eliminarDelCarrito(${i})">Eliminar</button></div>`;
 
     carritoItemsDiv.innerHTML += carritoItemHTML;
   }
@@ -176,7 +174,6 @@ function eliminarDelCarrito(indice){
 }
 
 cargarCatalogo();
-
 
 var  vaciar = document.querySelector('.vaciarcarrito');
 vaciar.addEventListener ('click', () => {
