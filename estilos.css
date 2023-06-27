@@ -173,9 +173,9 @@ button{
     padding: 10px 25px;
 }
 
-@keyframes spin
+@keyframes spin{
     to {transform: rotate(360deg);}
-
+}
 .btn-agregar:active::after{
     content: '';
     display: inline-block;
