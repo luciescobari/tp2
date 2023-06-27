@@ -10,7 +10,6 @@ header {
     display: flex;
     justify-content: space-between;
     padding: 15px;
-    margin: 4%;
 }
 
 nav {
@@ -47,13 +46,22 @@ nav a:hover {
     transition: all 0.3s;
 }
 
+body {
+    margin: 4%;
+}
+
+main {
+    background-color: #949887;
+}
+
 h1{
-    padding-top: 50px;
+    padding-top: 5%;
+    color: #905E3D;
+    font-family: 'Syne', sans-serif;
 } 
 
 #filtro-categorias {
     margin-bottom: 5%;
-    margin-top: 5%;
 }
 
 #catalogo{
@@ -66,7 +74,8 @@ h1{
     width: 200px;
     padding: 10px;
     margin: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #905E3D;
+    border-radius: 5px;
     text-align: center;
 }
 
@@ -76,11 +85,28 @@ h1{
     width: 300px; 
     height: 300px; 
     object-fit: cover; 
+    border-radius: 5px;
+}
+
+.producto h3 {
+    font-family: 'Syne';
+}
+
+.descripcion {
+    font-size: 12px;
 }
 
 .producto:hover {
     background-color: #905E3D;
+    scale: 1.1;
 }
+
+.precio {
+    font-family: 'Syne';
+    font-weight: 600;
+    font-size: 16px;
+}
+
 
 #carrito{ 
     position:fixed;
@@ -116,22 +142,13 @@ h1{
     padding: 5px 10px;
     border: none;
     cursor: pointer;
+    padding-left: 35px;
+    padding-right: 35px;
 }
 
 .btn-agregar:hover{
-    background-color: #ABC8E1;
-}
-
-.btn-verproducto{
-    background-color: #949887;
-    color: white;
-    padding: 5px 10px;
-    border: none;
-    cursor: pointer;
-}
-
-.btn-verproducto:hover{
-    background-color: #ABC8E1;
+    background-color: white;
+    color: #905E3D;
 }
 
 .ventanaModal{
@@ -139,71 +156,21 @@ h1{
     top: 20%;
     right: 70px;
     background-color: #fff;
-    box-shadow: 0 0 5px #ABC8E1;
+    box-shadow: 0 0 5px #905E3D;
     z-index: 999;
 }
 
 button{
-    background-color: #47a386;
+    font-family: 'Syne', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    background-color: #905E3D;
     border: 0;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     color: #fff;
-    font-size: 14px;
+    font-size: 12px;
     padding: 10px 25px;
 }
 
-.modal-container{
-    display: flex;
-    background-color: rgba(0, 0, 0, 0.3);
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    pointer-events: none;
-    opacity: 0;  
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100vw;
-    transition: opacity 0.3s ease;
-}
 
-.show{
-    pointer-events: auto;
-    opacity: 1;
-}
-
-.modal{
-    background-color: #fff;
-    width: 600px;
-    max-width: 100%;
-    padding: 30px 50px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    text-align: center;
-}
-
-.modal h1{
-    margin: 0;
-}
-
-.modal p{
-    opacity: 0.7;
-    font-size: 14px;
-}
-
-@keyframs spin{
-    to{transform: rotate(360deg);}
-}
-
-.btn-agregar:active::after{
-    content: '';
-    display: inline-block;
-    width: 12px;
-    height: 12px;
-    border: 2px solid #47a386;
-    border-top-color: transparent;
-    border-radius: 50%;
-    margin-left: 8px;
-    animation: spin 2s linear infinite;
-}

@@ -82,6 +82,7 @@ var productos = [
 var carritoItems = [];
 var totalPagar = 0;
 
+
 function cargarCatalogo() {
   var catalogo = document.getElementById("catalogo");
   catalogo.innerHTML = "";
@@ -93,8 +94,8 @@ function cargarCatalogo() {
       <div class="producto">
         <img src="${producto.imagen}" alt="${producto.nombre}">
         <h3>${producto.nombre}</h3>
-        <p>${producto.descripcion}</p>
-        <p>Precio: $${producto.precio}</p>
+        <p class="descripcion">${producto.descripcion}</p>
+        <p class="precio">Precio: $${producto.precio}</p>
         <button class="btn-agregar" onclick="agregarAlCarrito(${i})">Agregar al carrito</button>
       </div>`;
 
@@ -116,9 +117,9 @@ function filtrarProductosPorCategoria() {
         <div class="producto">
           <img src="${producto.imagen}" alt="${producto.nombre}">
           <h3>${producto.nombre}</h3>
-          <p>${producto.descripcion}</p>
-          <p>Precio: $${producto.precio}</p>
-          <button class="btn-agregar" onclick="agregarAlCarrito(${i})">Agregar al carrito</button>
+          <p class="descripcion">${producto.descripcion}</p>
+          <p class="precio">Precio: $${producto.precio}</p>
+          <button class="btn-agregar" onclick="agregarAlCarrito(${i})"> Agregar al carrito </button>
         </div>`;
       catalogo.innerHTML += productoHTML;
     }
@@ -143,7 +144,8 @@ function agregarAlCarrito(indice) {
   cerrar.style.marginLeft = '80%';
 
   carrito.addEventListener('click', (parametro) => {
-  ventana.style.cssText = "margin-left: 70%; border: 1px solid #000; width: 400px; padding: 15px; visibility: show"; 
+  ventana.style.cssText = "margin-left: 70%; border: 1px solid #905E3D; border-radius: 5px; width: 400px; padding: 15px; visibility: show";
+  ventana.style.background = "#F1EEE4";
 });
 
 function actualizarCarrito(){
@@ -185,6 +187,11 @@ vaciar.addEventListener ('click', () => {
 cerrar.addEventListener('click', () => {
   ventana.style.visibility = 'hidden';
 });
+
+
+
+
+
 
 
 
