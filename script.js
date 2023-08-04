@@ -190,12 +190,30 @@ function actualizarCarrito(){
   }
 }
 
+//funcion para aumentar la cantidad de un producto en el carrito
+function sumarCantidad(indice) {
+  carritoItems[indice].cantidad++;//aumenta la cantidad del prod en el carrito
+  totalPagar += carritoItems[indice].precio;//aumenta el total a pagar sumando el precio del prod
+  actualizarCarrito();
+}
+
+//funcion para restar la cantidad de un prod en el carrito
+function restarCantidad(indice) {
+  if (carritoItems[indice].cantidad > 1) {
+      carritoItems[indice].cantidad--;//reduce la cantidad del prod en el carrito si es mayor a 1
+      totalPagar -= carritoItems[indice].precio;//reduce el total a pagar restando el precio del producto
+      actualizarCarrito(); 
+  }
+}
+
 function eliminarDelCarrito(indice){
   var productoEliminado = carritoItems.splice(indice, 1)[0];
   totalPagar -= productoEliminado.precio;
 
   actualizarCarrito();
 }
+
+
 
 cargarCatalogo();
 
