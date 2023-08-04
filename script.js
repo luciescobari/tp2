@@ -244,6 +244,7 @@ function cancelarCompra() {
   ventana.style.visibility = 'visible';
 }
 
+//funcion para mostrar oferta especial durante periodo
 function mostrarofertaEspecial() {
   var ofertaEspecial = document.getElementById("oferta-especial");
   ofertaEspecial.style.display = "block";
