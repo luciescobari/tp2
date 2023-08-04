@@ -3,9 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="estilos.css">
     <title>Pura Skincare</title>
 </head>
@@ -23,15 +20,15 @@
         </nav>
     </header>
 
-    
+    <main>
     <h1>Tienda online</h1>
     <div id="filtro-categorias">
         <label for="categoria">Filtrar por categoría:</label>
         <select id="categoria" onchange="filtrarProductosPorCategoria()">
         <option value="">Todos</option>
-            <option value="Categoría 1">Faciales</option>
-            <option value="Categoría 2">Corporales</option>
-            <option value="Categoría 3">Accesorios</option>
+            <option value="Faciales">Faciales</option>
+            <option value="Corporales">Corporales</option>
+            <option value="Accesorios">Accesorios</option>
         </select>
     </div>
 
@@ -42,11 +39,42 @@
             <p>Total a pagar:   <span id="total"></span></p>
             <button class="vaciarcarrito">Vaciar carrito</button>
             <button class="cerrar">X</button>
+            <button class="finalizar-compra" onclick="mostrarFormularioCheckout()">Finalizar compra</button>
         </div>
     </div>
 
-    <main>
-        <div id="catalogo"></div>
+<!-- Banner flotante-->
+<div class="oferta-especial" id="oferta-especial">
+    <p>¡Solo por hoy! <br> 20% de descuento en toda la Tienda</p>
+</div>
+    <div id="catalogo"></div>
+
+<!-- Formulario de Checkout-->
+    <div class="checkout-formulario" id="checkout-formulario">
+        <h2>Checkout</h2>
+        <form>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" required>
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+            <label for="lugar-entrega">Lugar de entrega:</label>
+            <input type="text" id="lugar-entrega" required>
+            <label for="fecha-entrega">Fecha de entrega:</label>
+            <input type="date" id="fecha-entrega" required>
+            <label for="metodo-pago">Método de pago:</label>
+            <select id="metodo-pago" required>
+                <option value="tarjeta">Tarjeta de crédito/débito</option>
+                <option value="efectivo">Efectivo</option>
+            </select>
+            <label for="cuotas">Cuotas (Si corresponde):</label>
+            <input type="number" id="cuotas" min="1">
+            <button type="submit">Confirmar compra</button>
+            <button type="button" onclick="cancelarCompra()">Cancelar</button>
+        </form>
+
+    </div>    
     </main>
 
     <script src="script.js"></script>
