@@ -4,35 +4,35 @@ var productos = [
     descripcion: "Aceite vegetal de jojoba para uso externo. Apto para veganos.",
     precio: 1500,
     imagen: "img/aceitedejojoba.png",
-    categoria: "Categoría 1"
+    categoria: "Faciales"
   },
   {
     nombre: "Aceite de Rosa Mosqueta",
     descripcion: "Aceite de rosa mosqueta 100% natural & orgánico. Extraído de las semillas del rosal silvestre.",
     precio: 1100,
     imagen: "img/aceitederosamosquetaIII.png",
-    categoria: "Categoría 1"
+    categoria: "Faciales"
   },
   {
     nombre: "Aceite esencial de Manzanilla",
     descripcion: "100% puro y natural. Ideal para calmar los nervios del sistema digestivo.",
     precio: 1541,
     imagen: "img/aceiteesencial.png",
-    categoria: "Categoría 2"
+    categoria: "Corporales"
   },
   {
     nombre: "Agua de rosas",
     descripcion: "El Agua de rosas es conocida por sus propiedades hidratantes y tonificantes.",
     precio: 1045,
     imagen: "img/aguaderosas.png",
-    categoria: "Categoría 1"
+    categoria: "Faciales"
   },
   {
     nombre: "Tote Bag",
     descripcion: "Tote bag ecológica con fibras 100% naturales.",
     precio: 420,
     imagen: "img/bolsa.png",
-    categoria: "Categoría 3"
+    categoria: "Accesorios"
   },
 
   {
@@ -40,42 +40,42 @@ var productos = [
     descripcion: "Con aceite de coco y manteca de karite, formula nutritiva.",
     precio: 1575,
     imagen: "img/cremacorporal.png",
-    categoria: "Categoría 2"
+    categoria: "Corporales"
   },
   {
     nombre: "Emulsion corporal",
     descripcion: "Con aloe vera, ideal para el verano.",
     precio: 420,
     imagen: "img/emulsióncorporalconaloeveraII.png",
-    categoria: "Categoría 2"
+    categoria: "Corporales"
   },
   {
     nombre: "Espuma limpiadora",
     descripcion: "El aliado perfecto para una limpieza suave y efectiva de tu piel.",
     precio: 450,
     imagen: "img/espumalimpiadora.png",
-    categoria: "Categoría 2"
+    categoria: "Corporales"
   },
   {
     nombre: "Peine",
     descripcion: "Elección consciente para el cuidado de tu cabello y del medio ambiente.",
     precio: 1575,
     imagen: "img/peine.png",
-    categoria: "Categoría 3"
+    categoria: "Accesorios"
   },
   {
     nombre: "Repuesto corporal",
     descripcion: "Repuesto ecologico de nuestra crema corporal con aceite de coco y manteca karite.",
     precio: 420,
     imagen: "img/repuestocorporal.png",
-    categoria: "Categoría 2"
+    categoria: "Corporales"
   },
   {
     nombre: "Vitamina C",
     descripcion: "La clave para una piel radiante y luminosa en todo tu cuerpo. Aroma a naranjas.",
     precio: 450,
     imagen: "img/vitaminaC.png",
-    categoria: "Categoría 2"
+    categoria: "Corporales"
   },
 ];
 
