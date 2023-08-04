@@ -79,10 +79,11 @@ var productos = [
   },
 ];
 
+//almacenar los productos en el carrito de compras
 var carritoItems = [];
 var totalPagar = 0;
 
-
+//funcion para cargar el catalogo de productos en la pagina
 function cargarCatalogo() {
   var catalogo = document.getElementById("catalogo");
   catalogo.innerHTML = "";
@@ -105,10 +106,15 @@ function cargarCatalogo() {
 
 //Categorias: 
 function filtrarProductosPorCategoria() {
+  //obtiene el valor del filtro de categoria seleccionado
   var filtroCategoria = document.getElementById("categoria").value;
   var catalogo = document.getElementById("catalogo");
   catalogo.innerHTML = "";
 
+  //muestra el banner flotante de oferta
+  mostrarofertaEspecial();
+
+  //itera a traves de los productos y muestra solo los que coinciden con la categoria seleccionada
   for (var i = 0; i < productos.length; i++) {
     var producto = productos[i];
 
@@ -128,33 +134,49 @@ function filtrarProductosPorCategoria() {
 
 function agregarAlCarrito(indice) {
   var producto = productos[indice];
-  carritoItems.push(producto);
-  totalPagar += producto.precio;
+
+  var productoEnCarrito = carritoItems.find(item => item.nombre === producto.nombre);
+  if (productoEnCarrito){
+    productoEnCarrito.cantidad++; //si el producto esta en el carrito aumentar su cantidad
+    } else {
+    carritoItems.push({ ...producto, cantidad: 1}); //si el producto no esta en el carrito aumentar su cantidad 1
+}
+
+  totalPagar += producto.precio;//actualiza el total a pagar
 
   actualizarCarrito();
 }
 
-// Carrito: 
+//Carrito: 
   var carrito = document.querySelector('.carrito');
   var ventana = document.querySelector('.ventanaModal');
   var fondo = document.querySelector('#carrito');
   ventana.style.visibility = 'hidden';
 
+  var checkoutFormulario = document.querySelector('checkout-formulario');
+  checkoutFormulario.style.visibility = 'hidden';
+
   var cerrar = document.querySelector('.cerrar');
   cerrar.style.marginLeft = '80%';
 
+  //evento de clic al boton "carrito" para mostrar la ventana modal
   carrito.addEventListener('click', (parametro) => {
   ventana.style.cssText = "margin-left: 70%; border: 1px solid #905E3D; border-radius: 5px; width: 400px; padding: 15px; visibility: show";
   ventana.style.background = "#F1EEE4";
 });
 
+//actualiza la visualizacion del carrito en la pagina
 function actualizarCarrito(){
   var carritoItemsDiv = document.getElementById("carrito-items");
   var totalDiv = document.getElementById("total");
 
+  //limpiar el contenido actual del carrito
   carritoItemsDiv.innerHTML = "";
+
+  //mostrar el total a pagar con dos decimales
   totalDiv.textContent = "$" + totalPagar.toFixed(2);
 
+  //iterar a traves de los elementos en el carrito y generar el html correspondiente
   for (var i = 0; i < carritoItems.length; i++) {
     var carritoItem = carritoItems[i];
 
