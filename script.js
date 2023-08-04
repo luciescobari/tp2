@@ -213,11 +213,52 @@ function eliminarDelCarrito(indice){
   actualizarCarrito();
 }
 
+function mostrarVentanaModal() {
+  ventana.style.visibility ='visible';
+  document.addEventListener("keydown", cerrarVentanaConEsc);//agregamos evento para cerrar la ventana modal con tecla ESC
+}
+
+function cerrarVentanaModal() {
+  ventana.style.visibility='hidden';
+  document.removeEventListener("keydown", cerrarVentanaConEsc);//elimina el evento para cerrar la ventana modal 
+}
+
+function cerrarVentanaConEsc(event) {
+  if (event.key === "Escape") {
+    cerrarVentanaModal();//llama a la funcion para cerrar la ventana modal
+  }
+}
+
+carrito.addEventListener('click',mostrarVentanaModal);
+
+//funcion para mostrar el formulario de checkout y desplazarse suavemente hacia el
+function mostrarFormularioCheckout() {
+  ventana.style.visibility = 'hidden';
+  checkoutFormulario.style.visibility = 'visible';
+  var checkoutSection = document.getElementById("checkout-formulario");
+  checkoutSection.scrollIntoView({ behavior: 'smooth' }); 
+}
+
+function cancelarCompra() {
+  checkoutFormulario.style.visibility = 'hidden';
+  ventana.style.visibility = 'visible';
+}
+
+function mostrarofertaEspecial() {
+  var ofertaEspecial = document.getElementById("oferta-especial");
+  ofertaEspecial.style.display = "block";
+
+  setTimeout(function () {
+    ofertaEspecial.style.display = "none";
+  }, 10000);
+
+}
 
 
 cargarCatalogo();
 
-var  vaciar = document.querySelector('.vaciarcarrito');
+var vaciarcarrito = document.querySelector('.vaciarcarrito');
+
 vaciar.addEventListener ('click', () => {
   carritoItems = [];
   totalPagar = 0;
